@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Listas y formularios</title>
+    <meta name="author" content="Angélica Lizeth Mondragón Hernández">
+</head>
+<body>
+    <h1>Listas y Formularios</h1>
+    <div>
+        <h2>Listas</h2>
+        <h3>Listas no ordenadas</h3>
+        <ul>
+            <li>Leche</li>
+            <li>Carne</li>
+            <li>Pan</li>
+            <li>Jamón</li>
+            <li>Papel</li>
+        </ul>
+
+        <h3>Listas Oredenadas</h3>
+        <ol type="I">
+            <li>Primero</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+            <li>Cuarto</li>
+            <li>Quinto</li>
+        </ol>
+         <ol type="I" start="10">
+            <li>Décimo</li>
+            <li>Décimo Primero</li>
+            <li>Décimo Segundo</li>
+            <li>Décimo Tercero</li>
+            <li>Décimo Cuarto</li>
+        </ol>
+        <ol type="I" start="14" reversed>
+            <li>Décimo Cuarto</li>
+            <li>Décimo Tercero</li>
+            <li>Décimo Segundo</li>
+            <li>Décimo Primero</li>
+            <li>Décimo</li>
+        </ol>
+        <h3>Listas de Definiciones</h3>
+        <dl>
+            <dt>HTML</dt>
+            <dd>Lenguajes de marcado de hipertexto</dd>
+            <dt>CSS</dt>
+            <dd>Hoja de estilos de cascada</dd>
+            <dt>JS</dt>
+            <dd>Java Script</dd>
+        </dl>
+
+        <h3>Listas Anidadas</h3>
+        <p>Desarrollo web</p>
+        <ul>
+            <li>Front-End
+                <ol type="I">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JS</li>
+                </ol>
+            </li>
+            <li>Back-End
+                <ol type="A">
+                    <li>NodeJS</li>
+                    <li>MySQL</li>
+                    <li>ArchLinux</li>
+                </ol>
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <div>
+        <h2>Formularios</h2> 
+        <h3>Formulario de Inicio de Sesión</h3>
+        <form action="/inicio_sesion" method="post">
+            <label for="username">Nombre de usuario</label>
+            <input type="text" id="username" name="username" required> 
+            <!-- type: tipo de texto, label: que coincida con el for, name: tiene que coincidir con el llamado  -->
+            <br>
+            <label for="password">Contrseña</label>
+            <input type="password" name="password" id="password" required placeholder="Mínimo 8 caracteres">
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+        <hr>
+        <h3>Formulario con campo de entrada de varias líneas</h3>
+        <form action="validar.js" method="post">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required placeholder="Introduce tu nombre"> 
+            <br>
+            <label for="opinion">Comentario</label>
+            <textarea name="opinion" id="opinion" placeholder="Tu opinión es muy importante" required rows="6" cols="60"></textarea>
+            <button type="submit">Enviar Comentario</button>
+        </form>
+        <hr>
+        <h3>Formulario con lista desplegable de opciones</h3>
+        <form action="/opciones" method="post">
+            <label for="Bebidas">Bebidas:</label>
+            <select name="Bebidas" id="Bebidas">
+                <option value="Coca-Cola">Coca-Cola</option>
+                <option value="Pepsi">Pepsi</option>
+                <option value="Boing">Boing</option>
+                <option value="Té">Té</option>
+                <option value="Jarritos" selected>Jarritos</option>
+            </select>
+            <br>
+            <label for="Postres">Postres</label>
+            <select name="Postres" id="Postres">
+                <option value="" disabled selected>Selecciona un postre</option>
+                <option value="Pay de limón">Pay de limón</option>
+                <option value="Gelatina">Gelatina</option>
+                <option value="Flan">Flan</option>
+                <option value="Pastel">Pastel</option>
+                <option value="Fresas con crema">Fresas con crema</option>
+            </select>
+            <br>
+            <input type="submit">
+        </form>
+        <h3>Formulario con distintos campos de datos</h3>
+        <form action="datos.php" method="post">
+            <fieldset>
+                <legend>Nombre completo</legend>
+                <label for="Nombre">Nombre:</label>
+                <input type="text" id="Nombre" name="Nombre" required>
+                <br>
+                <label for="ap_paterno">Ap. Paterno:</label>
+                <input type="text" name="ap_paterno" id="ap_paterno">
+                <br>
+                <label for="ap_materno">Ap. Materno:</label>
+                <input type="text" id="ap_materno" name="ap_materno">
+            </fieldset>
+            <fieldset>
+                <legend>Otros datos</legend>
+                <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+                <br>
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" id="edad" required min="18" max="90">
+                <br>
+                <label for="numero_cuenta">Número de cuenta:</label>
+                <input type="text" id="numero_cuenta" name="numero_cuenta" required pattern="[0-9]"{9} minlength="9" maxlength="9">
+                <br>
+                <label for="correo_electronico">Correo Electrónico:</label>
+                <input type="email" name="correo_electronico" id="correo_electronico">
+            </fieldset>
+            <fieldset>
+                <legend>Datos de Dirección</legend>
+                <label for="calle">Calle:</label>
+                <input type="text" id="calle" name="calle" required>
+                <br>
+                <label for="colonia">Colonia:</label>
+                <input type="text" name="colonia" id="colonia" required>
+                <br>
+                <label for="num_interior">Número Interior:</label>
+                <input type="number" id="num_interior" name="num_interior">
+                <br>
+                <label for="num_exterior">Número Exterior:</label>
+                <input type="number" name="num_exterior" id="num_exterior">
+            </fieldset>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
